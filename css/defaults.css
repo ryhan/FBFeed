@@ -1,0 +1,19 @@
+/*Default.CSS */
+
+html,
+body,
+aside,
+div,
+header,
+nav,
+img{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+body{
+	font-family: helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+}

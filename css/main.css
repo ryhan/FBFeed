@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "orator";
+  src: url("OratorStd-Slanted.otf");
+}
+@font-face {
+  font-family: "pacifico";
+  src: url("Pacifico.ttf");
+}
+::selection {
+	background: #FFACAC;
+}
+
+body{
+	background-color: #FAFAFA;
+	padding: 20px;
+	padding-right: 420px;
+	padding-top: 120px;
+	-webkit-transition: all 0.2s ease-in-out;
+}
+body.hasAlert{
+	padding-top: 170px;
+}
+
+nav{
+	background-color: rgba(50,50,50,0.2);
+	background-color: rgba(213, 213, 213, 0.9);
+	height: 100px;
+	left: 0;
+	padding: 20px;
+	position: fixed;
+	right: 420px;
+	top: 0;
+}
+
+aside{
+	background-color: white;
+	border-left: 1px solid rgba(0,0,0,0.1);
+	bottom: 0;
+	padding: 100px 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 420px;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.preview{
+	height: 300px;
+	margin: 100px 5px;
+	width: 400px;
+}
+
+.preview img{
+	width: 100%;
+}
+
+
+
+input[type='text']{
+	background-color: #EEE;
+	border: none;
+	border-radius: 0;
+	box-sizing: border-box;
+	color: #FF5757;
+	font-family: pacifico, helvetica, arial, sans-serif;
+	font-size: 32px;
+	font-weight: normal;
+	outline: none;
+	padding: 2px 15px;
+	text-transform: lowercase;
+}
+	input[type='text']:focus{
+		background-color: white;
+		box-shadow: 5px 5px rgba(0,0,0,0.1);
+	}
+
+#suggestions{
+	background-color: #FF5757;
+	box-shadow: 5px 5px rgba(0,0,0,0.1);
+	position: fixed;
+	top: 100px;
+	left: 0;
+	right: 420px;
+	height: 50px;
+	padding: 8px 20px;
+	-webkit-animation: dropin 0.5s 1 ease-in-out;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	overflow: hidden;
+
+}
+	.suggestion{
+		border: 2px solid white;
+		border-radius: 3px;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 18px;
+		color: white;
+		font-weight: bold;
+		padding: 5px 8px;
+		margin-right: 10px;
+		margin-bottom: 100px;
+
+	}
+	.suggestion:hover{
+		background-color: white;
+		color: #FF5757;
+		opacity: 1;
+	}
+	.suggestion:active{
+		top: 2px;
+		opacity: 0.5;
+		
+	}
+
+.shot{
+	cursor: pointer;
+	display: inline-block;
+	height: 135px;
+	margin: 5px;
+	padding: 0;
+	width: 180px;
+
+	-webkit-animation: popin 0.5s 1;
+}
+	.shot img{
+		background-color: white;
+		height: 135px;
+		width: 180px;
+	}
+.shot:hover{
+	top: -5px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+}
+.shot:active{
+	top: 0;
+	box-shadow: none;
+}
+
+@-webkit-keyframes popin{
+  0%   { opacity: 0;  top: 150px;}
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes dropin{
+  0%   { opacity: 0;  top: -250px;}
+  80%   { opacity: 1;  top: 120px;}
+  100% { opacity: 1; top: 100px;}
+}
