@@ -1,3 +1,4 @@
+
 // Additional JS functions here
 window.fbAsyncInit = function() {
   FB.init({
@@ -20,7 +21,8 @@ window.fbAsyncInit = function() {
         login();
     } else {
         // not_logged_in
-        login();
+        addbutton();
+        //login();
     }
   });
 
@@ -39,6 +41,7 @@ function login() {
   FB.login(function(response) {
       if (response.authResponse) {
           // connected
+          location.reload();
       } else {
           // cancelled
       }

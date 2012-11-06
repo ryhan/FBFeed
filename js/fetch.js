@@ -1,13 +1,15 @@
 /* fetch.js */
 
-
-var stream = [];
-
 function fetch(){
+
+	loading();
+
 	// Fetch the user stream
 	FB.api('/me/home', function(response) {
 		stream = response.data;
 		renderStream(stream);
+		
+		doneloading();
 	});
 }
 

@@ -1,157 +1,114 @@
-@font-face {
-  font-family: "orator";
-  src: url("OratorStd-Slanted.otf");
-}
-@font-face {
-  font-family: "pacifico";
-  src: url("Pacifico.ttf");
-}
-::selection {
-	background: #FFACAC;
-}
-
 body{
-	background-color: #FAFAFA;
-	padding: 20px;
-	padding-right: 420px;
-	padding-top: 120px;
+	background-color: #E7EBF2;
+	color: #808080;
+	font-family: HelveticaNeue, 'Helvetica Neue', HelveticaNeueRoman, HelveticaNeue-Roman, 'Helvetica Neue Roman', Helvetica, Tahoma, Geneva, Arial, sans-serif;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size: 14px;
+	font-weight: 200;
+	font-weight: normal;
+	line-height: 26px;
+
 	-webkit-transition: all 0.2s ease-in-out;
-}
-body.hasAlert{
-	padding-top: 170px;
+
+
+	max-width: 600px;
+	padding: 15px;
+	margin: 100px auto;
 }
 
-nav{
-	background-color: rgba(50,50,50,0.2);
-	background-color: rgba(213, 213, 213, 0.9);
-	height: 100px;
-	left: 0;
-	padding: 20px;
-	position: fixed;
-	right: 420px;
-	top: 0;
+a{
+	color: #3B5898;
+	text-decoration: none;
 }
 
-aside{
+.story{
 	background-color: white;
-	border-left: 1px solid rgba(0,0,0,0.1);
+	border: 1px solid #C4CCE0;
+	margin-bottom: 15px;
+	padding: 25px;
+	position: relative;
+
+	-webkit-animation: popin 0.5s 1 ease-in-out;
+}
+
+.story.hasAttachment{
+	padding-bottom: 75px;
+}
+
+.imageDiv{
+	background-color: #EDEFF4;
+	border-top: 1px solid #E2E2E2;
+	position: absolute;
 	bottom: 0;
-	padding: 100px 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 70px;
+	padding: 10px 25px;
+}
+	a .imageDiv{
+		cursor: pointer;
+	}
+	a .imageDiv:hover{
+		background-color: #E7EBF2;
+		border-top: 1px solid #B4C0E0;
+		box-shadow: 
+			0 1px 0 #B4C0E0,
+			0 2px 0 white,
+			inset 0 1px 0 white;
+	}
+	a .imageDiv:active{
+		background-color: #EDEDED;
+		border-top: 1px solid #B4C0E0;
+		box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+.imageDiv img{
+	max-height: 50px;
+}
+
+section{
+	padding: 50px;
+	text-align: center;
+}
+
+.login{
+	background-color: #627AAC;
+	border: 1px solid #29437E;
+	box-shadow: 
+		0 2px 3px rgba(53, 79, 136, 0.50),
+		inset 0 1px 0 #8A9CC2;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	padding: 5px 10px;
+	text-shadow: 0 -1px rgba(0,0,0,0.5);
+}
+	.login:active{
+		background-color: #4F6AA3;
+		box-shadow: 
+			inset 0 2px 5px rgba(53, 79, 136, 0.50);
+	}
+
+.alert{
+	background-color: #3B5898;
+	border-bottom: 1px solid #193783;
+	color: white;
+	height: 50px;
+	left: 0;
+	padding: 12px 50px;
 	position: fixed;
 	right: 0;
 	top: 0;
-	width: 420px;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+	-webkit-transition: all 0.4s ease-out;
 }
-
-.preview{
-	height: 300px;
-	margin: 100px 5px;
-	width: 400px;
-}
-
-.preview img{
-	width: 100%;
-}
-
-
-
-input[type='text']{
-	background-color: #EEE;
-	border: none;
-	border-radius: 0;
-	box-sizing: border-box;
-	color: #FF5757;
-	font-family: pacifico, helvetica, arial, sans-serif;
-	font-size: 32px;
-	font-weight: normal;
-	outline: none;
-	padding: 2px 15px;
-	text-transform: lowercase;
-}
-	input[type='text']:focus{
-		background-color: white;
-		box-shadow: 5px 5px rgba(0,0,0,0.1);
+	.alert.hidden{
+		top: -100px;
 	}
-
-#suggestions{
-	background-color: #FF5757;
-	box-shadow: 5px 5px rgba(0,0,0,0.1);
-	position: fixed;
-	top: 100px;
-	left: 0;
-	right: 420px;
-	height: 50px;
-	padding: 8px 20px;
-	-webkit-animation: dropin 0.5s 1 ease-in-out;
-
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-	overflow: hidden;
-
-}
-	.suggestion{
-		border: 2px solid white;
-		border-radius: 3px;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 18px;
-		color: white;
-		font-weight: bold;
-		padding: 5px 8px;
-		margin-right: 10px;
-		margin-bottom: 100px;
-
-	}
-	.suggestion:hover{
-		background-color: white;
-		color: #FF5757;
-		opacity: 1;
-	}
-	.suggestion:active{
-		top: 2px;
-		opacity: 0.5;
-		
-	}
-
-.shot{
-	cursor: pointer;
-	display: inline-block;
-	height: 135px;
-	margin: 5px;
-	padding: 0;
-	width: 180px;
-
-	-webkit-animation: popin 0.5s 1;
-}
-	.shot img{
-		background-color: white;
-		height: 135px;
-		width: 180px;
-	}
-.shot:hover{
-	top: -5px;
-	box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
-}
-.shot:active{
-	top: 0;
-	box-shadow: none;
-}
 
 @-webkit-keyframes popin{
   0%   { opacity: 0;  top: 150px;}
+  75%   { opacity: 1;  top: -20px;}
   100% { opacity: 1; }
-}
-
-@-webkit-keyframes dropin{
-  0%   { opacity: 0;  top: -250px;}
-  80%   { opacity: 1;  top: 120px;}
-  100% { opacity: 1; top: 100px;}
 }
